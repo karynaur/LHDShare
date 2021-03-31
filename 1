@@ -1,0 +1,11 @@
+from authy.api import AuthyApiClient
+authy_api = AuthyApiClient('ibgCVX1GjtIsdHKpzLx5eR0boI9hb8AtD')
+
+user = authy_api.users.create(
+    email='adityasrinivas20bcs8@iiitkottayam.ac.in'),
+    phone='7406540439',
+    country_code=91)
+
+
+sms = authy_api.users.request_sms(user.id)
+print(sms.content)
